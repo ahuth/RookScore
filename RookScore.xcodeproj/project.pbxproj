@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49A860891699314B00028620 /* RSRook.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A860881699314B00028620 /* RSRook.m */; };
 		49DD82831696672400302317 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DD82821696672400302317 /* UIKit.framework */; };
 		49DD82851696672400302317 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DD82841696672400302317 /* Foundation.framework */; };
 		49DD82871696672400302317 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DD82861696672400302317 /* CoreGraphics.framework */; };
@@ -23,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		49A860871699314B00028620 /* RSRook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSRook.h; sourceTree = "<group>"; };
+		49A860881699314B00028620 /* RSRook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSRook.m; sourceTree = "<group>"; };
 		49DD827E1696672400302317 /* RookScore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RookScore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DD82821696672400302317 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		49DD82841696672400302317 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -58,6 +61,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49A8607416992A8C00028620 /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				49DD829A1696672400302317 /* MainStoryboard_iPhone.storyboard */,
+				49DD829D1696672400302317 /* MainStoryboard_iPad.storyboard */,
+				49DD82B01696688400302317 /* RSProgressCircle.h */,
+				49DD82B11696688400302317 /* RSProgressCircle.m */,
+				49DD82A01696672400302317 /* RSViewController.h */,
+				49DD82A11696672400302317 /* RSViewController.m */,
+			);
+			name = "User Interface";
+			sourceTree = "<group>";
+		};
+		49A8608B1699315500028620 /* Core Logic */ = {
+			isa = PBXGroup;
+			children = (
+				49A860871699314B00028620 /* RSRook.h */,
+				49A860881699314B00028620 /* RSRook.m */,
+			);
+			name = "Core Logic";
+			sourceTree = "<group>";
+		};
 		49DD82731696672400302317 = {
 			isa = PBXGroup;
 			children = (
@@ -90,12 +115,8 @@
 			children = (
 				49DD82911696672400302317 /* RSAppDelegate.h */,
 				49DD82921696672400302317 /* RSAppDelegate.m */,
-				49DD829A1696672400302317 /* MainStoryboard_iPhone.storyboard */,
-				49DD82B01696688400302317 /* RSProgressCircle.h */,
-				49DD82B11696688400302317 /* RSProgressCircle.m */,
-				49DD829D1696672400302317 /* MainStoryboard_iPad.storyboard */,
-				49DD82A01696672400302317 /* RSViewController.h */,
-				49DD82A11696672400302317 /* RSViewController.m */,
+				49A8608B1699315500028620 /* Core Logic */,
+				49A8607416992A8C00028620 /* User Interface */,
 				49DD82891696672400302317 /* Supporting Files */,
 			);
 			path = RookScore;
@@ -187,6 +208,7 @@
 				49DD82931696672400302317 /* RSAppDelegate.m in Sources */,
 				49DD82A21696672400302317 /* RSViewController.m in Sources */,
 				49DD82B21696688400302317 /* RSProgressCircle.m in Sources */,
+				49A860891699314B00028620 /* RSRook.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

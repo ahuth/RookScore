@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RSProgressCircle.h"
+#import "RSRook.h"
 
 @interface RSViewController : UIViewController
+
+@property (strong, nonatomic) RSRook *game;
+@property (strong, nonatomic) IBOutlet RSProgressCircle *teamOneCircle;
+@property (strong, nonatomic) IBOutlet RSProgressCircle *teamTwoCircle;
 
 @end
