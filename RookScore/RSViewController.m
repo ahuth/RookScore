@@ -28,4 +28,23 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    // Setup delegates for the views
+    if ([segue.identifier isEqualToString:@"mainToBid"]) {
+        RSModalView *bidView = (RSModalView *)segue.destinationViewController;
+        bidView.delegate = self;
+    }
+}
+
+// Receive a cancel message from an RSModalView.
+- (void)didClickCancel {
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (IBAction)undoButtonPressed:(id)sender {
+}
+
+- (IBAction)newButtonPressed:(id)sender {
+}
 @end

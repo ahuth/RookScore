@@ -18,7 +18,7 @@
 @implementation RSRook
 
 // Instance variables
-NSDictionary *gameState;
+NSMutableDictionary *gameState;
 NSMutableArray *previousState;
 
 // Constants
@@ -29,29 +29,38 @@ const NSInteger MAX_ROOK_SCORE = 300;
 {
 	self = [super init];
     if (self) {
-		gameState = @{
+        // The literal syntax for creating a dictionary can only create an
+        // immutable one, which is why we must then create a mutableCopy.
+		gameState = [@{
             @"teamOneScore" : @0,
             @"teamTwoScore" : @0,
+            @"teamOneProgress" : @0.0,
+            @"teamTwoProgress" : @0.0,
             @"currentBidder" : @0,
             @"currentBid" : @0
-        };
+        } mutableCopy];
+        
+        previousState = [[NSMutableArray alloc] init];
     }
 	return self;
 }
 
-- (void)processBid:(NSInteger)bidder amount:(NSInteger)bid {
-    
+- (NSDictionary *)processBid:(NSInteger)bidder amount:(NSInteger)bid {
+    return [gameState copy];
 }
 
-- (void)processScore:(NSInteger)score {
-    
+- (NSDictionary *)processScore:(NSInteger)score {
+    return [gameState copy];
+}
+
+- (NSDictionary *)processUndo {
 }
 
 - (void)archiveGameState {
     
     // Add a copy of the game state to the previous state array.  We have to use
     // a copy, because otherwise we're adding a reference and it will change on
-    // us.
+    // us when we update the current game state.
     [previousState addObject:[gameState copy]];
 }
 

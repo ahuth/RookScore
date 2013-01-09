@@ -10,7 +10,8 @@
 
 @interface RSRook : NSObject
 
-- (void)processBid:(NSInteger)bidder amount:(NSInteger)bid;
-- (void)processScore:(NSInteger)score;
+- (NSDictionary *)processBid:(NSInteger)bidder amount:(NSInteger)bid;
+- (NSDictionary *)processScore:(NSInteger)score;
+- (NSDictionary *)processUndo;
 
 @end
