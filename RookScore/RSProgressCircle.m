@@ -10,6 +10,9 @@
 
 @implementation RSProgressCircle
 
+NSInteger score;
+CGFloat progress;
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -22,6 +25,12 @@
 - (void)drawRect:(CGRect)rect
 {
     // Drawing code
+}
+
+- (void)updateProgress:(CGFloat)nextProgress score:(NSInteger)nextScore {
+    score = nextScore;
+    progress = nextProgress;
+    [self setNeedsDisplay];
 }
 
 @end

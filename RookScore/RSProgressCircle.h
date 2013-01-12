@@ -10,4 +10,6 @@
 
 @interface RSProgressCircle : UIView
 
+- (void)updateProgress:(CGFloat)percent score:(NSInteger)total;
+
 @end
