@@ -169,7 +169,7 @@
                                     <action selector="bidButtonPressed:" destination="Bd3-sq-GrH" eventType="touchUpInside" id="srO-oy-7hk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="120" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpP-Kc-0Tb">
+                            <button opaque="NO" tag="120" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a32-Sr-V3P">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="120">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -179,7 +179,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="bidButtonPressed:" destination="Bd3-sq-GrH" eventType="touchUpInside" id="DRo-dp-moT"/>
+                                    <action selector="bidButtonPressed:" destination="Bd3-sq-GrH" eventType="touchUpInside" id="kfU-Tq-QyC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FzQ-xi-xMa">
@@ -282,10 +282,9 @@
                             <constraint firstItem="JI3-Pq-SHw" firstAttribute="baseline" secondItem="po2-C0-2GG" secondAttribute="baseline" type="default" id="0eP-6O-Wpa"/>
                             <constraint firstItem="MFO-F2-DLs" firstAttribute="baseline" secondItem="po2-C0-2GG" secondAttribute="baseline" type="default" id="14t-14-sgY"/>
                             <constraint firstItem="99h-1n-Nud" firstAttribute="trailing" secondItem="MFO-F2-DLs" secondAttribute="trailing" type="default" id="4vo-PM-PqK"/>
-                            <constraint firstItem="gpP-Kc-0Tb" firstAttribute="baseline" secondItem="MFO-F2-DLs" secondAttribute="baseline" type="default" id="6VU-xH-tWm"/>
+                            <constraint firstItem="MFO-F2-DLs" firstAttribute="top" secondItem="99h-1n-Nud" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="5C3-me-gdr"/>
                             <constraint firstItem="FzQ-xi-xMa" firstAttribute="baseline" secondItem="8ms-6s-pua" secondAttribute="baseline" type="default" id="6bR-My-CHG"/>
                             <constraint firstItem="Ue5-qF-Vcr" firstAttribute="leading" secondItem="2mY-gz-1cr" secondAttribute="leading" type="default" id="6wm-xA-rzL"/>
-                            <constraint firstItem="gpP-Kc-0Tb" firstAttribute="top" secondItem="MFO-F2-DLs" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="71V-ca-MEZ"/>
                             <constraint firstItem="gql-37-VcR" firstAttribute="baseline" secondItem="3dC-5R-TcG" secondAttribute="baseline" type="default" id="8kb-dE-BBM"/>
                             <constraint firstItem="MFO-F2-DLs" firstAttribute="leading" secondItem="po2-C0-2GG" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="8rN-Iq-Lls"/>
                             <constraint firstItem="tyL-cl-Z5E" firstAttribute="leading" secondItem="gql-37-VcR" secondAttribute="leading" type="default" id="9QL-KF-GcZ"/>
@@ -295,6 +294,7 @@
                             <constraint firstItem="tyL-cl-Z5E" firstAttribute="top" secondItem="Ue5-qF-Vcr" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Mzt-Ui-qcA"/>
                             <constraint firstItem="jVp-DS-s2D" firstAttribute="leading" secondItem="po2-C0-2GG" secondAttribute="leading" type="default" id="NRV-Th-0uY"/>
                             <constraint firstItem="Ue5-qF-Vcr" firstAttribute="top" secondItem="dJg-8E-gBB" secondAttribute="top" constant="161" id="Nga-mI-2Ir"/>
+                            <constraint firstItem="a32-Sr-V3P" firstAttribute="leading" secondItem="po2-C0-2GG" secondAttribute="leading" type="default" id="PPG-k4-jCc"/>
                             <constraint firstItem="8ms-6s-pua" firstAttribute="top" secondItem="dJg-8E-gBB" secondAttribute="top" constant="93" id="QDM-By-LLY"/>
                             <constraint firstItem="JI3-Pq-SHw" firstAttribute="top" secondItem="jVp-DS-s2D" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="QWj-Al-X45"/>
                             <constraint firstItem="tyL-cl-Z5E" firstAttribute="baseline" secondItem="2mY-gz-1cr" secondAttribute="baseline" type="default" id="Qq0-b5-lQa"/>
@@ -302,13 +302,13 @@
                             <constraint firstItem="iia-EM-7hF" firstAttribute="top" secondItem="dJg-8E-gBB" secondAttribute="top" constant="20" symbolic="YES" type="default" id="VHV-eX-mF5"/>
                             <constraint firstItem="JI3-Pq-SHw" firstAttribute="top" secondItem="gql-37-VcR" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Wdj-sX-Pe8"/>
                             <constraint firstItem="gql-37-VcR" firstAttribute="top" secondItem="2mY-gz-1cr" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="XDU-XQ-kfy"/>
-                            <constraint firstItem="po2-C0-2GG" firstAttribute="leading" secondItem="gpP-Kc-0Tb" secondAttribute="leading" type="default" id="aY9-Wx-ddL"/>
                             <constraint firstItem="gql-37-VcR" firstAttribute="top" secondItem="tyL-cl-Z5E" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="b1d-Sb-i9V"/>
+                            <constraint firstItem="a32-Sr-V3P" firstAttribute="top" secondItem="po2-C0-2GG" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="bhV-Eh-Anv"/>
+                            <constraint firstItem="a32-Sr-V3P" firstAttribute="trailing" secondItem="po2-C0-2GG" secondAttribute="trailing" type="default" id="cfQ-CY-Azu"/>
                             <constraint firstItem="po2-C0-2GG" firstAttribute="leading" secondItem="JI3-Pq-SHw" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="dGr-OP-tiA"/>
                             <constraint firstItem="3dC-5R-TcG" firstAttribute="trailing" secondItem="99h-1n-Nud" secondAttribute="trailing" type="default" id="dgT-3k-p8L"/>
                             <constraint firstItem="Ue5-qF-Vcr" firstAttribute="trailing" secondItem="2mY-gz-1cr" secondAttribute="trailing" type="default" id="eJx-AZ-SKI"/>
                             <constraint firstItem="FzQ-xi-xMa" firstAttribute="leading" secondItem="8ms-6s-pua" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="fsd-Jb-Q60"/>
-                            <constraint firstItem="gpP-Kc-0Tb" firstAttribute="top" secondItem="po2-C0-2GG" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="gGu-Cx-b2E"/>
                             <constraint firstItem="JI3-Pq-SHw" firstAttribute="baseline" secondItem="99h-1n-Nud" secondAttribute="baseline" type="default" id="gQ2-S0-fge"/>
                             <constraint firstItem="99h-1n-Nud" firstAttribute="leading" secondItem="jVp-DS-s2D" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="ibg-1v-BTo"/>
                             <constraint firstItem="po2-C0-2GG" firstAttribute="top" secondItem="99h-1n-Nud" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="jVa-jR-gPh"/>
@@ -318,13 +318,12 @@
                             <constraint firstItem="99h-1n-Nud" firstAttribute="leading" secondItem="MFO-F2-DLs" secondAttribute="leading" type="default" id="m7S-iq-n1d"/>
                             <constraint firstItem="2mY-gz-1cr" firstAttribute="leading" secondItem="tyL-cl-Z5E" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="oiB-Tk-tRg"/>
                             <constraint firstItem="jVp-DS-s2D" firstAttribute="top" secondItem="3dC-5R-TcG" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ovs-MU-lCH"/>
-                            <constraint firstItem="JI3-Pq-SHw" firstAttribute="bottom" secondItem="po2-C0-2GG" secondAttribute="bottom" type="default" id="qAq-zh-JNC"/>
+                            <constraint firstItem="MFO-F2-DLs" firstAttribute="top" secondItem="JI3-Pq-SHw" secondAttribute="top" type="default" id="qcy-kZ-Bbd"/>
                             <constraint firstItem="jVp-DS-s2D" firstAttribute="leading" secondItem="gql-37-VcR" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="rGT-Dq-maF"/>
                             <constraint firstItem="gql-37-VcR" firstAttribute="leading" secondItem="JI3-Pq-SHw" secondAttribute="leading" type="default" id="t3o-WF-4Oh"/>
                             <constraint firstItem="iia-EM-7hF" firstAttribute="leading" secondItem="dJg-8E-gBB" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="uA3-nL-Jzv"/>
                             <constraint firstItem="2mY-gz-1cr" firstAttribute="leading" secondItem="jVp-DS-s2D" secondAttribute="leading" type="default" id="v6L-bi-NdU"/>
                             <constraint firstItem="99h-1n-Nud" firstAttribute="baseline" secondItem="jVp-DS-s2D" secondAttribute="baseline" type="default" id="wCI-Zr-U2v"/>
-                            <constraint firstItem="po2-C0-2GG" firstAttribute="trailing" secondItem="gpP-Kc-0Tb" secondAttribute="trailing" type="default" id="zyG-X3-iGE"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
@@ -341,11 +340,12 @@
                         <outletCollection property="bidButtons" destination="JI3-Pq-SHw" id="wyp-6z-n5N"/>
                         <outletCollection property="bidButtons" destination="po2-C0-2GG" id="jGf-O0-Fk9"/>
                         <outletCollection property="bidButtons" destination="MFO-F2-DLs" id="fJ2-Ii-nK3"/>
+                        <outletCollection property="bidButtons" destination="a32-Sr-V3P" id="X7E-Jy-CwU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mwx-hx-kJu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="875" y="-275"/>
+            <point key="canvasLocation" x="875" y="-549"/>
         </scene>
         <!--Score Controller-->
         <scene sceneID="ght-jj-csg">
@@ -586,7 +586,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tLr-RR-7Kz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="875" y="358"/>
+            <point key="canvasLocation" x="875" y="57"/>
         </scene>
     </scenes>
     <classes>

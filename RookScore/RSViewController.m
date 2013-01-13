@@ -16,6 +16,9 @@
 
 @implementation RSViewController
 
+#pragma mark -
+#pragma mark Inherited methods
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -30,6 +33,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Segue
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     // Setup delegates for the views
@@ -41,6 +46,9 @@
         scoreView.delegate = self;
     }
 }
+
+#pragma mark -
+#pragma mark Delegate methods
 
 - (void)didClickCancel {
     [self dismissViewControllerAnimated:YES completion:NULL];
@@ -59,6 +67,9 @@
     NSDictionary *gameData = [self.game processScore:score];
     [self renderGameState:gameData];
 }
+
+#pragma mark -
+#pragma mark User interface methods
 
 - (IBAction)bidButtonPressed:(id)sender {
     
@@ -92,6 +103,9 @@
         [self renderGameState:olderGameState];
     }
 }
+
+#pragma mark -
+#pragma mark Update game state
 
 - (void)renderGameState:(NSDictionary *)gameData {
     

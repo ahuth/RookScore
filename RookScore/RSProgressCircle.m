@@ -20,6 +20,9 @@
 // Constants
 const NSInteger CIRCLE_STROKE_WIDTH = 20;
 
+#pragma mark -
+#pragma mark Inherited methods
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -28,6 +31,9 @@ const NSInteger CIRCLE_STROKE_WIDTH = 20;
     }
     return self;
 }
+
+#pragma mark -
+#pragma mark Drawing actions
 
 - (void)drawRect:(CGRect)rect
 {
@@ -66,16 +72,6 @@ const NSInteger CIRCLE_STROKE_WIDTH = 20;
     [self drawText:scoreString atPoint:center font:[UIFont boldSystemFontOfSize:16.0]];
 }
 
-- (void)updateProgress:(CGFloat)nextProgress score:(NSInteger)nextScore {
-    
-    // This method is exported and gets called from outside of its class.  The
-    // 'setNeedsDisplay' call causes our 'drawRect' method above to be called.
-    
-    _score = nextScore;
-    _progress = nextProgress;
-    [self setNeedsDisplay];
-}
-
 - (void)drawText:(NSString*)text atPoint:(CGPoint)point font:(UIFont*)textFont {
     
     // Find the width of our text.
@@ -92,6 +88,19 @@ const NSInteger CIRCLE_STROKE_WIDTH = 20;
 
 - (CGFloat)degreesToRadians:(NSInteger)degrees {
     return degrees * M_PI / 180.0;
+}
+
+#pragma mark -
+#pragma mark API
+
+- (void)updateProgress:(CGFloat)nextProgress score:(NSInteger)nextScore {
+    
+    // This method is exported and gets called from outside of its class.  The
+    // 'setNeedsDisplay' call causes our 'drawRect' method above to be called.
+    
+    _score = nextScore;
+    _progress = nextProgress;
+    [self setNeedsDisplay];
 }
 
 @end
