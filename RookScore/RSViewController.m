@@ -40,7 +40,15 @@
 }
 
 - (void)didClickModalCancel {
+    
     [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (void)didPickBid:(NSInteger)team amount:(NSInteger)bid {
+    
+    [self dismissViewControllerAnimated:YES completion:NULL];
+    NSDictionary *gameData = [self.game processBid:team amount:bid];
+    [self renderGameState:gameData];
 }
 
 - (IBAction)bidButtonPressed:(id)sender {
@@ -51,7 +59,7 @@
         // Bidding phase.
         [self performSegueWithIdentifier:@"mainToBid" sender:self];
     } else {
-        
+        // Scoring phase.
     }
 }
 
@@ -76,7 +84,13 @@
 
 - (void)renderGameState:(NSDictionary *)gameData {
     
-    // TODO - update progress circles
+    NSInteger teamOneScore = [gameData[@"teamOneScore"] intValue];
+    NSInteger teamTwoScore = [gameData[@"teamTwoScore"] intValue];
+    CGFloat teamOneProgress = [gameData[@"teamOneProgress"] floatValue];
+    CGFloat teamTwoProgress = [gameData[@"teamTwoProgress"] floatValue];
+    
+    [self.teamOneCircle updateProgress:teamOneProgress score:teamOneScore];
+    [self.teamTwoCircle updateProgress:teamTwoProgress score:teamTwoScore];
     
     switch ([gameData[@"phase"] intValue]) {
         case start:
