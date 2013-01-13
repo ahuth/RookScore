@@ -34,40 +34,57 @@
     
     // Setup delegates for the views
     if ([segue.identifier isEqualToString:@"mainToBid"]) {
-        RSModalView *bidView = (RSModalView *)segue.destinationViewController;
+        RSBidController *bidView = (RSBidController *)segue.destinationViewController;
         bidView.delegate = self;
     }
 }
 
-// Receive a cancel message from a modal view.
-- (void)didClickCancel {
+- (void)didClickModalCancel {
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
-// Get the next oldest game state from the game logic.
+- (IBAction)bidButtonPressed:(id)sender {
+    
+    UIBarButtonItem *button = (UIBarButtonItem *)sender;
+    
+    if (button.title = @"Bid") {
+        // Bidding phase.
+        [self performSegueWithIdentifier:@"mainToBid" sender:self];
+    } else {
+        
+    }
+}
+
+- (IBAction)newButtonPressed:(id)sender {
+    
+    NSDictionary *newGameState = [self.game startNewGame];
+    
+    if (newGameState) {
+        [self renderGameState:newGameState];
+    }
+}
+
 - (IBAction)undoButtonPressed:(id)sender {
     
     NSDictionary *olderGameState = [self.game processUndo];
     
     if (olderGameState) {
+        // TODO - pop up alert
         [self renderGameState:olderGameState];
     }
 }
 
-// Start a new game.
-- (IBAction)newButtonPressed:(id)sender {
-    [self.game processScore:6];
-}
-
-// Update the screen to reflect the current game state.
 - (void)renderGameState:(NSDictionary *)gameData {
+    
+    // TODO - update progress circles
     
     switch ([gameData[@"phase"] intValue]) {
         case start:
-            break;
         case bidding:
+            _bidButton.title = @"Bid";
             break;
         case scoring:
+            _bidButton.title = @"Score";
             break;
         case won:
             break;

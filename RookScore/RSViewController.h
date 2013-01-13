@@ -9,15 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "RSProgressCircle.h"
 #import "RSRook.h"
-#import "RSModalView.h"
+#import "RSBidController.h"
 
 @interface RSViewController : UIViewController <RSModalViewDelegate>
 
 @property (strong, nonatomic) RSRook *game;
 @property (strong, nonatomic) IBOutlet RSProgressCircle *teamOneCircle;
 @property (strong, nonatomic) IBOutlet RSProgressCircle *teamTwoCircle;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *bidButton;
 
-- (IBAction)undoButtonPressed:(id)sender;
+- (IBAction)bidButtonPressed:(id)sender;
 - (IBAction)newButtonPressed:(id)sender;
+- (IBAction)undoButtonPressed:(id)sender;
 
 @end

@@ -145,29 +145,37 @@ const NSInteger POINTS_PER_ROUND = 120;
 
 - (NSDictionary *)startNewGame {
     
-    [gameState removeAllObjects];
-    [previousState removeAllObjects];
+    if (gameState[@"phase"] != @(start)) {
+        
+        [gameState removeAllObjects];
+        [previousState removeAllObjects];
+        
+        gameState = nil;
+        previousState = nil;
+        
+        gameState = [@{
+            @"teamOneScore" : @0,
+            @"teamTwoScore" : @0,
+            @"teamOneProgress" : @0.0,
+            @"teamTwoProgress" : @0.0,
+            @"currentBidder" : @0,
+            @"currentBid" : @0,
+            @"phase" : @(start)
+        } mutableCopy];
+        
+        previousState = [[NSMutableArray alloc] init];
+        
+        return [gameState copy];
+    }
     
-    gameState = [@{
-        @"teamOneScore" : @0,
-        @"teamTwoScore" : @0,
-        @"teamOneProgress" : @0.0,
-        @"teamTwoProgress" : @0.0,
-        @"currentBidder" : @0,
-        @"currentBid" : @0,
-        @"phase" : @(start)
-    } mutableCopy];
-    
-    previousState = [[NSMutableArray alloc] init];
-    
-    return [gameState copy];
+    return nil;
 }
 
 - (void)archiveGameState {
     
     // Add a copy of the game state to the previous state array.  We have to use
     // a copy, because otherwise we're adding a reference to the current game
-    // state which will change on us.
+    // state, and the "previous" state will change with the current.
     [previousState addObject:[gameState copy]];
 }
 

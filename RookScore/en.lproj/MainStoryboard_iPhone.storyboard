@@ -34,7 +34,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="nkb-95-IlC"/>
                                     <barButtonItem title="Bid" width="140" id="z4h-2i-sse">
                                         <connections>
-                                            <segue destination="Bd3-sq-GrH" kind="modal" identifier="mainToBid" id="cHK-2A-0us"/>
+                                            <action selector="bidButtonPressed:" destination="2" id="Pbh-wO-cI6"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -66,18 +66,20 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="bidButton" destination="z4h-2i-sse" id="hPi-tu-uDL"/>
                         <outlet property="teamOneCircle" destination="nFt-Ji-dvV" id="LYT-9e-f7p"/>
                         <outlet property="teamTwoCircle" destination="npy-oC-Jmf" id="3Rj-Nn-4eW"/>
+                        <segue destination="Bd3-sq-GrH" kind="modal" identifier="mainToBid" id="Msw-dK-B6C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="393" y="57"/>
         </scene>
-        <!--Modal View-->
+        <!--Bid Controller-->
         <scene sceneID="DbR-Ng-WDL">
             <objects>
-                <viewController id="Bd3-sq-GrH" customClass="RSModalView" sceneMemberID="viewController">
+                <viewController id="Bd3-sq-GrH" customClass="RSBidController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dJg-8E-gBB">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -273,8 +275,8 @@
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
-        <class className="RSModalView" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RSModalView.h"/>
+        <class className="RSBidController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RSBidController.h"/>
             <relationships>
                 <relationship kind="action" name="cancelButtonPressed"/>
             </relationships>
@@ -285,8 +287,10 @@
         <class className="RSViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RSViewController.h"/>
             <relationships>
+                <relationship kind="action" name="bidButtonPressed:"/>
                 <relationship kind="action" name="newButtonPressed:"/>
                 <relationship kind="action" name="undoButtonPressed:"/>
+                <relationship kind="outlet" name="bidButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="teamOneCircle" candidateClass="RSProgressCircle"/>
                 <relationship kind="outlet" name="teamTwoCircle" candidateClass="RSProgressCircle"/>
             </relationships>
