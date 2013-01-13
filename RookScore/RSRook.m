@@ -17,9 +17,11 @@
 
 @implementation RSRook
 
-// Instance variables
-NSMutableDictionary *gameState;
-NSMutableArray *previousState;
+{
+    // Instance variables
+    NSMutableDictionary *gameState;
+    NSMutableArray *previousState;
+}
 
 // Constants
 const NSInteger MAX_ROOK_SCORE = 300;
@@ -35,8 +37,8 @@ const NSInteger POINTS_PER_ROUND = 120;
 		gameState = [@{
             @"teamOneScore" : @0,
             @"teamTwoScore" : @0,
-            @"teamOneProgress" : @0.0,
-            @"teamTwoProgress" : @0.0,
+            @"teamOneProgress" : @0.0f,
+            @"teamTwoProgress" : @0.0f,
             @"currentBidder" : @0,
             @"currentBid" : @0,
             @"phase" : @(start)
@@ -121,6 +123,9 @@ const NSInteger POINTS_PER_ROUND = 120;
                 break;
         }
     }
+    
+    gameState[@"teamOneProgress"] = @([gameState[@"teamOneScore"] floatValue] / MAX_ROOK_SCORE);
+    gameState[@"teamTwoProgress"] = @([gameState[@"teamTwoScore"] floatValue] / MAX_ROOK_SCORE);
     
     if ([self gameIsOver]) {
         gameState[@"phase"] = @(won);

@@ -1,24 +1,18 @@
 //
-//  RSBidController.m
+//  RSScoreController.m
 //  RookScore
 //
-//  Created by Andrew Huth on 1/12/13.
+//  Created by Andrew Huth on 1/13/13.
 //  Copyright (c) 2013 Andrew Huth. All rights reserved.
 //
 
-#import "RSBidController.h"
+#import "RSScoreController.h"
 
-@interface RSBidController ()
+@interface RSScoreController ()
 
 @end
 
-@implementation RSBidController
-
-{
-    // Instance variables.
-    NSInteger team;
-    NSInteger bid;
-}
+@implementation RSScoreController
 
 // Properties
 @synthesize delegate;
@@ -48,22 +42,8 @@
     [self.delegate didClickCancel];
 }
 
-- (IBAction)teamButtonPressed:(UIButton *)sender {
-    
-    team = sender.tag;
-    
-    if (team && bid) {
-        [self.delegate didPickBid:team amount:bid];
-        
-    }
-}
-
-- (IBAction)bidButtonPressed:(UIButton *)sender {
-    
-    bid = sender.tag;
-    
-    if (team && bid) {
-        [self.delegate didPickBid:team amount:bid];
-    }
+- (IBAction)scoreButtonPressed:(UIButton *)sender {
+    NSInteger score = sender.tag;
+    [self.delegate didPickScore:score];
 }
 @end

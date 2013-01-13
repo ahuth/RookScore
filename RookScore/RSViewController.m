@@ -36,11 +36,13 @@
     if ([segue.identifier isEqualToString:@"mainToBid"]) {
         RSBidController *bidView = (RSBidController *)segue.destinationViewController;
         bidView.delegate = self;
+    } else if ([segue.identifier isEqualToString:@"mainToScore"]) {
+        RSScoreController *scoreView = (RSScoreController *)segue.destinationViewController;
+        scoreView.delegate = self;
     }
 }
 
-- (void)didClickModalCancel {
-    
+- (void)didClickCancel {
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
@@ -51,15 +53,23 @@
     [self renderGameState:gameData];
 }
 
+- (void)didPickScore:(NSInteger)score {
+    
+    [self dismissViewControllerAnimated:YES completion:NULL];
+    NSDictionary *gameData = [self.game processScore:score];
+    [self renderGameState:gameData];
+}
+
 - (IBAction)bidButtonPressed:(id)sender {
     
     UIBarButtonItem *button = (UIBarButtonItem *)sender;
     
-    if (button.title = @"Bid") {
+    if ([button.title isEqualToString:@"Bid"]) {
         // Bidding phase.
         [self performSegueWithIdentifier:@"mainToBid" sender:self];
     } else {
         // Scoring phase.
+        [self performSegueWithIdentifier:@"mainToScore" sender:self];
     }
 }
 
@@ -68,6 +78,7 @@
     NSDictionary *newGameState = [self.game startNewGame];
     
     if (newGameState) {
+        // TODO - pop up alert
         [self renderGameState:newGameState];
     }
 }

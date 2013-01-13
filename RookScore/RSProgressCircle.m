@@ -17,10 +17,6 @@
 
 @implementation RSProgressCircle
 
-// Instance variables
-NSInteger score;
-CGFloat progress;
-
 // Constants
 const NSInteger CIRCLE_STROKE_WIDTH = 20;
 
@@ -48,11 +44,11 @@ const NSInteger CIRCLE_STROKE_WIDTH = 20;
     // The start and end angle to draw between.  Notice that we start at -90
     // degrees, which is straight up.
     NSInteger startAngle = -90;
-    NSInteger endAngle = startAngle + progress * 360;
+    NSInteger endAngle = startAngle + _progress * 360.0;
     
     // If progress positive, we want a clockwise circle.  If it's negative, we
     // want a counter-clockwise circle.
-    if (progress >= 0) {
+    if (_progress >= 0) {
         direction = 0;  // clockwise
         CGContextSetStrokeColorWithColor(context, [UIColor redColor].CGColor);
     } else {
@@ -64,9 +60,9 @@ const NSInteger CIRCLE_STROKE_WIDTH = 20;
     CGContextSetLineWidth(context, CIRCLE_STROKE_WIDTH);
     CGContextAddArc(context, center.x, center.y, radius, [self degreesToRadians:startAngle], [self degreesToRadians:endAngle], direction);
     CGContextStrokePath(context);
-    
+
     // Draw the text.
-    NSString *scoreString = [NSString stringWithFormat:@"%d", score];
+    NSString *scoreString = [NSString stringWithFormat:@"%d", _score];
     [self drawText:scoreString atPoint:center font:[UIFont boldSystemFontOfSize:16.0]];
 }
 
@@ -75,8 +71,8 @@ const NSInteger CIRCLE_STROKE_WIDTH = 20;
     // This method is exported and gets called from outside of its class.  The
     // 'setNeedsDisplay' call causes our 'drawRect' method above to be called.
     
-    score = nextScore;
-    progress = nextProgress;
+    _score = nextScore;
+    _progress = nextProgress;
     [self setNeedsDisplay];
 }
 

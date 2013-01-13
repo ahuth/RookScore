@@ -8,18 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol ModalDelegate <NSObject>
-- (void)didClickModalCancel;
-@end
-
 @protocol BidDelegate <NSObject>
+- (void)didClickCancel;
 - (void)didPickBid:(NSInteger)team amount:(NSInteger)bid;
 @end
 
 @interface RSBidController : UIViewController
 
-@property (assign) id <ModalDelegate, BidDelegate> delegate;
+@property (assign) id <BidDelegate> delegate;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *teamButtons;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *bidButtons;
 
 - (IBAction)cancelButtonPressed;
+- (IBAction)teamButtonPressed:(UIButton *)sender;
+- (IBAction)bidButtonPressed:(UIButton *)sender;
 
 @end
