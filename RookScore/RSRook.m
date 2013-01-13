@@ -49,6 +49,9 @@ const NSInteger POINTS_PER_ROUND = 120;
 	return self;
 }
 
+#pragma mark -
+#pragma mark Process updates from a user interface
+
 - (NSDictionary *)processBid:(NSInteger)bidder amount:(NSInteger)bid {
     
     [self archiveGameState];
@@ -161,8 +164,8 @@ const NSInteger POINTS_PER_ROUND = 120;
         gameState = [@{
             @"teamOneScore" : @0,
             @"teamTwoScore" : @0,
-            @"teamOneProgress" : @0.0,
-            @"teamTwoProgress" : @0.0,
+            @"teamOneProgress" : @0.0f,
+            @"teamTwoProgress" : @0.0f,
             @"currentBidder" : @0,
             @"currentBid" : @0,
             @"phase" : @(start)
@@ -175,6 +178,9 @@ const NSInteger POINTS_PER_ROUND = 120;
     
     return nil;
 }
+
+#pragma mark -
+#pragma mark Internal methods
 
 - (void)archiveGameState {
     

@@ -8,9 +8,16 @@
 
 #import "RSViewController.h"
 
+typedef enum {
+    undo,
+    startNew
+} alerts;
+
 @interface RSViewController ()
 
+- (void)processNewGame;
 - (void)renderGameState:(NSDictionary *)gameData;
+- (void)showBinaryAlert:(NSString *)message title:(NSString *)title type:(alerts)tag;
 
 @end
 
@@ -48,7 +55,7 @@
 }
 
 #pragma mark -
-#pragma mark Delegate methods
+#pragma mark Modal view delegates
 
 - (void)didClickCancel {
     [self dismissViewControllerAnimated:YES completion:NULL];
@@ -86,12 +93,11 @@
 
 - (IBAction)newButtonPressed:(id)sender {
     
-    NSDictionary *newGameState = [self.game startNewGame];
+    // The new game button was pressed, so pop up an alert view asking if they're
+    // sure.  If they are, control gets redirected through a delegate to the
+    // processNewGame method.
     
-    if (newGameState) {
-        // TODO - pop up alert
-        [self renderGameState:newGameState];
-    }
+    [self showBinaryAlert:@"Start a new game?" title:@"New game" type:startNew];
 }
 
 - (IBAction)undoButtonPressed:(id)sender {
@@ -99,8 +105,51 @@
     NSDictionary *olderGameState = [self.game processUndo];
     
     if (olderGameState) {
-        // TODO - pop up alert
         [self renderGameState:olderGameState];
+    }
+}
+
+- (void)processNewGame {
+    
+    // Start a new game.  Control gets redirected here from an alert view through
+    // a delegate.  Really wish I didn't have to go through re-directions like
+    // that, but that's Objective C for you.
+    
+    NSDictionary *newGameState = [self.game startNewGame];
+    
+    if (newGameState) {
+        [self renderGameState:newGameState];
+    }
+}
+
+#pragma mark -
+#pragma mark Alerts
+
+- (void)showBinaryAlert:(NSString *)message title:(NSString *)title type:(alerts)tag {
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+        message:message
+        delegate:self
+        cancelButtonTitle:@"No"
+        otherButtonTitles:@"Yes", nil];
+    
+    alert.tag = tag;
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    // Delegate method from UIAlertViewDelegate.  Determine which alert view was
+    // displayed, and call the correct method.
+    
+    const NSInteger YES_BUTTON = 1;
+    
+    switch (alertView.tag) {
+        case startNew:
+            if (buttonIndex == YES_BUTTON) {
+                [self processNewGame];
+            }
+            break;
     }
 }
 

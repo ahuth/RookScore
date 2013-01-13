@@ -12,7 +12,7 @@
 #import "RSBidController.h"
 #import "RSScoreController.h"
 
-@interface RSViewController : UIViewController <BidDelegate, ScoreDelegate>
+@interface RSViewController : UIViewController <BidDelegate, ScoreDelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) RSRook *game;
 @property (strong, nonatomic) IBOutlet RSProgressCircle *teamOneCircle;
