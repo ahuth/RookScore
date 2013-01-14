@@ -10,7 +10,8 @@
 
 typedef enum {
     undo,
-    startNew
+    startNew,
+    info
 } alerts;
 
 @interface RSViewController ()
@@ -18,6 +19,7 @@ typedef enum {
 - (void)processNewGame;
 - (void)renderGameState:(NSDictionary *)gameData;
 - (void)showBinaryAlert:(NSString *)message title:(NSString *)title type:(alerts)tag;
+- (void)showInfoAlert:(NSString *)message title:(NSString *)title;
 
 @end
 
@@ -97,7 +99,7 @@ typedef enum {
     // sure.  If they are, control gets redirected through a delegate to the
     // processNewGame method.
     
-    [self showBinaryAlert:@"Start a new game?" title:@"New game" type:startNew];
+    [self showBinaryAlert:nil title:@"Start a new game?" type:startNew];
 }
 
 - (IBAction)undoButtonPressed:(id)sender {
@@ -137,6 +139,18 @@ typedef enum {
     [alert show];
 }
 
+- (void)showInfoAlert:(NSString *)message title:(NSString *)title {
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+        message:message
+        delegate:self
+        cancelButtonTitle:@"Ok"
+        otherButtonTitles:nil];
+    
+    alert.tag = info;
+    [alert show];
+}
+
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     
     // Delegate method from UIAlertViewDelegate.  Determine which alert view was
@@ -168,6 +182,8 @@ typedef enum {
     
     switch ([gameData[@"phase"] intValue]) {
         case start:
+            _bidButton.title = @"Bid";
+            break;
         case bidding:
             _bidButton.title = @"Bid";
             break;
@@ -175,7 +191,18 @@ typedef enum {
             _bidButton.title = @"Score";
             break;
         case won:
+            [self showInfoAlert:nil title:@"Game Over"];
+            _bidButton.title = @"Game over";
+            _bidButton.enabled = false;
+            _renegButton.enabled = false;
             break;
+    }
+    
+    // When the game is won, we disable the reneg and bid/score button.  If we
+    // hit undo from here, though, we need to re-enable those buttons.
+    if ([gameData[@"phase"] intValue] != won && _bidButton.enabled == false) {
+        _bidButton.enabled = true;
+        _renegButton.enabled = true;
     }
 }
 @end

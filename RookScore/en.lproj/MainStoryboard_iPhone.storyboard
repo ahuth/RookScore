@@ -67,6 +67,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="bidButton" destination="z4h-2i-sse" id="hPi-tu-uDL"/>
+                        <outlet property="renegButton" destination="lgR-80-Wep" id="c4H-fg-15n"/>
                         <outlet property="teamOneCircle" destination="nFt-Ji-dvV" id="LYT-9e-f7p"/>
                         <outlet property="teamTwoCircle" destination="npy-oC-Jmf" id="3Rj-Nn-4eW"/>
                         <segue destination="Bd3-sq-GrH" kind="modal" identifier="mainToBid" id="Msw-dK-B6C"/>
@@ -621,6 +622,7 @@
                 <relationship kind="action" name="newButtonPressed:"/>
                 <relationship kind="action" name="undoButtonPressed:"/>
                 <relationship kind="outlet" name="bidButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="renegButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="teamOneCircle" candidateClass="RSProgressCircle"/>
                 <relationship kind="outlet" name="teamTwoCircle" candidateClass="RSProgressCircle"/>
             </relationships>

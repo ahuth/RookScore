@@ -18,6 +18,7 @@
 @property (strong, nonatomic) IBOutlet RSProgressCircle *teamOneCircle;
 @property (strong, nonatomic) IBOutlet RSProgressCircle *teamTwoCircle;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *bidButton;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *renegButton;
 
 - (IBAction)bidButtonPressed:(id)sender;
 - (IBAction)newButtonPressed:(id)sender;

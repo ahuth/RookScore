@@ -15,7 +15,8 @@
 @implementation RSBidController
 
 {
-    // Instance variables.
+    // Instance variables.  I learned the hard way that these have to be between
+    // brackets - {}.  Otherwise, they are shared between instances of the class.
     NSInteger team;
     NSInteger bid;
 }
