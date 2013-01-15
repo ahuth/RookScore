@@ -11,7 +11,7 @@
 @interface RSProgressCircle ()
 
 - (CGFloat)degreesToRadians:(NSInteger)degrees;
-- (void)drawText:(NSString*)text atPoint:(CGPoint)point font:(UIFont*)textFont;
+- (void)drawCenteredText:(NSString*)text atPoint:(CGPoint)point font:(UIFont*)textFont;
 
 @end
 
@@ -69,17 +69,17 @@ const NSInteger CIRCLE_STROKE_WIDTH = 20;
 
     // Draw the text.
     NSString *scoreString = [NSString stringWithFormat:@"%d", _score];
-    [self drawText:scoreString atPoint:center font:[UIFont boldSystemFontOfSize:16.0]];
+    [self drawCenteredText:scoreString atPoint:center font:[UIFont boldSystemFontOfSize:16.0]];
 }
 
-- (void)drawText:(NSString*)text atPoint:(CGPoint)point font:(UIFont*)textFont {
+- (void)drawCenteredText:(NSString*)text atPoint:(CGPoint)point font:(UIFont*)textFont {
     
     // Find the width of our text.
     CGSize textSize = [text sizeWithFont:textFont];
     CGFloat textWidth = textSize.width;
     
-    // Adjust where we draw the text, based on its width, so that it appears in
-    // the middle of the rect.
+    // Adjust where we draw the text, based on its width, so that it appears
+    // centered on the point.
     CGPoint textPoint = CGPointMake(point.x - textWidth / 2, point.y);
     
     // Now draw it.
@@ -95,8 +95,7 @@ const NSInteger CIRCLE_STROKE_WIDTH = 20;
 
 - (void)updateProgress:(CGFloat)nextProgress score:(NSInteger)nextScore {
     
-    // This method is exported and gets called from outside of its class.  The
-    // 'setNeedsDisplay' call causes our 'drawRect' method above to be called.
+    // setNeedsDisplay causes our drawRect method above to be called.
     
     _score = nextScore;
     _progress = nextProgress;

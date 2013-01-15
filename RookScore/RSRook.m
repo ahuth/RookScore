@@ -84,7 +84,11 @@ const NSInteger POINTS_PER_ROUND = 120;
                 break;
         }
         
-        gameState[@"phase"] = @(bidding);
+        if ([self gameIsOver]) {
+            gameState[@"phase"] = @(won);
+        } else {
+            gameState[@"phase"] = @(bidding);   // the next game phase
+        }
     
         return [gameState copy];
     }
@@ -191,8 +195,6 @@ const NSInteger POINTS_PER_ROUND = 120;
 }
 
 - (BOOL)gameIsOver {
-    
-    // Decide if the game is over or not.
     
     NSInteger teamOneScore = [gameState[@"teamOneScore"] intValue];
     NSInteger teamTwoScore = [gameState[@"teamTwoScore"] intValue];

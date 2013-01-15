@@ -53,6 +53,9 @@ typedef enum {
     } else if ([segue.identifier isEqualToString:@"mainToScore"]) {
         RSScoreController *scoreView = (RSScoreController *)segue.destinationViewController;
         scoreView.delegate = self;
+    } else if ([segue.identifier isEqualToString:@"mainToReneg"]) {
+        RSRenegController *renegView = (RSRenegController *)segue.destinationViewController;
+        renegView.delegate = self;
     }
 }
 
@@ -77,6 +80,13 @@ typedef enum {
     [self renderGameState:gameData];
 }
 
+- (void)didPickReneg:(NSInteger)cheater otherTeamPoints:(NSInteger)score {
+    
+    [self dismissViewControllerAnimated:YES completion:NULL];
+    NSDictionary *gameData = [self.game processReneg:cheater otherTeamPoints:score];
+    [self renderGameState:gameData];
+}
+
 #pragma mark -
 #pragma mark User interface methods
 
@@ -95,9 +105,7 @@ typedef enum {
 
 - (IBAction)newButtonPressed:(id)sender {
     
-    // The new game button was pressed, so pop up an alert view asking if they're
-    // sure.  If they are, control gets redirected through a delegate to the
-    // processNewGame method.
+    // After the alert, control is redirected to the processNewGame method.
     
     [self showBinaryAlert:nil title:@"Start a new game?" type:startNew];
 }
@@ -111,11 +119,12 @@ typedef enum {
     }
 }
 
-- (void)processNewGame {
+- (IBAction)renegButtonPressed:(id)sender {
     
-    // Start a new game.  Control gets redirected here from an alert view through
-    // a delegate.  Really wish I didn't have to go through re-directions like
-    // that, but that's Objective C for you.
+    [self performSegueWithIdentifier:@"mainToReneg" sender:self];
+}
+
+- (void)processNewGame {
     
     NSDictionary *newGameState = [self.game startNewGame];
     

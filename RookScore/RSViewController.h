@@ -11,8 +11,9 @@
 #import "RSRook.h"
 #import "RSBidController.h"
 #import "RSScoreController.h"
+#import "RSRenegController.h"
 
-@interface RSViewController : UIViewController <BidDelegate, ScoreDelegate, UIAlertViewDelegate>
+@interface RSViewController : UIViewController <BidDelegate, ScoreDelegate, RenegDelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) RSRook *game;
 @property (strong, nonatomic) IBOutlet RSProgressCircle *teamOneCircle;
@@ -23,5 +24,6 @@
 - (IBAction)bidButtonPressed:(id)sender;
 - (IBAction)newButtonPressed:(id)sender;
 - (IBAction)undoButtonPressed:(id)sender;
+- (IBAction)renegButtonPressed:(id)sender;
 
 @end
