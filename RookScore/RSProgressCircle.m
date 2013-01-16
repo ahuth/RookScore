@@ -20,9 +20,6 @@
 // Constants
 const NSInteger CIRCLE_STROKE_WIDTH = 20;
 
-#pragma mark -
-#pragma mark Inherited methods
-
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];

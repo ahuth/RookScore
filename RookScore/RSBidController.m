@@ -24,9 +24,6 @@
 // Properties
 @synthesize delegate;
 
-#pragma mark -
-#pragma mark Inherited methods
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -59,15 +56,28 @@
     
     team = sender.tag;
     
+    // Hide the other team.
+    for (UIButton *button in _teamButtons) {
+        if (button != sender) {
+            button.hidden = true;
+        }
+    }
+    
     if (team && bid) {
         [self.delegate didPickBid:team amount:bid];
-        
     }
 }
 
 - (IBAction)bidButtonPressed:(UIButton *)sender {
     
     bid = sender.tag;
+    
+    // Hide the other buttons.
+    for (UIButton *button in _bidButtons) {
+        if (button != sender) {
+            button.hidden = true;
+        }
+    }
     
     if (team && bid) {
         [self.delegate didPickBid:team amount:bid];

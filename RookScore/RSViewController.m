@@ -25,9 +25,6 @@ typedef enum {
 
 @implementation RSViewController
 
-#pragma mark -
-#pragma mark Inherited methods
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -42,7 +39,8 @@ typedef enum {
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Segue
+#pragma mark -
+#pragma mark Segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
@@ -121,7 +119,9 @@ typedef enum {
 
 - (IBAction)renegButtonPressed:(id)sender {
     
-    [self performSegueWithIdentifier:@"mainToReneg" sender:self];
+    if ([_bidButton.title isEqualToString:@"Score"]) {
+        [self performSegueWithIdentifier:@"mainToReneg" sender:self];
+    }
 }
 
 - (void)processNewGame {

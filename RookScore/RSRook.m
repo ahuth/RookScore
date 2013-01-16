@@ -84,6 +84,9 @@ const NSInteger POINTS_PER_ROUND = 120;
                 break;
         }
         
+        gameState[@"teamOneProgress"] = @([gameState[@"teamOneScore"] floatValue] / MAX_ROOK_SCORE);
+        gameState[@"teamTwoProgress"] = @([gameState[@"teamTwoScore"] floatValue] / MAX_ROOK_SCORE);
+        
         if ([self gameIsOver]) {
             gameState[@"phase"] = @(won);
         } else {

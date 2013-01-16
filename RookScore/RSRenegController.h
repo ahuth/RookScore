@@ -16,7 +16,12 @@
 @interface RSRenegController : UIViewController
 
 @property (assign) id<RenegDelegate> delegate;
+@property (strong, nonatomic) IBOutlet UILabel *pointsLabel;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *teamButtons;
 
 - (IBAction)cancelButtonPressed;
+- (IBAction)pointsSliderChanged:(UISlider *)sender;
+- (IBAction)teamButtonPressed:(UIButton *)sender;
+- (IBAction)rightButtonPressed;
 
 @end

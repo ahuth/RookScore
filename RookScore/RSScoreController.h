@@ -16,7 +16,6 @@
 @interface RSScoreController : UIViewController
 
 @property (assign) id <ScoreDelegate> delegate;
-@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *scoreButtons;
 
 - (IBAction)cancelButtonPressed;
 - (IBAction)scoreButtonPressed:(UIButton *)sender;
