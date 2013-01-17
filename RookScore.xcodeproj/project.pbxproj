@@ -20,7 +20,6 @@
 		49DD82971696672400302317 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49DD82961696672400302317 /* Default@2x.png */; };
 		49DD82991696672400302317 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49DD82981696672400302317 /* Default-568h@2x.png */; };
 		49DD829C1696672400302317 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DD829A1696672400302317 /* MainStoryboard_iPhone.storyboard */; };
-		49DD829F1696672400302317 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DD829D1696672400302317 /* MainStoryboard_iPad.storyboard */; };
 		49DD82A21696672400302317 /* RSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DD82A11696672400302317 /* RSViewController.m */; };
 		49DD82B21696688400302317 /* RSProgressCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DD82B11696688400302317 /* RSProgressCircle.m */; };
 		49E7A8B416A4CF2B007A625D /* RSRenegController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E7A8B316A4CF2B007A625D /* RSRenegController.m */; };
@@ -47,7 +46,6 @@
 		49DD82961696672400302317 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		49DD82981696672400302317 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		49DD829B1696672400302317 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		49DD829E1696672400302317 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		49DD82A01696672400302317 /* RSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSViewController.h; sourceTree = "<group>"; };
 		49DD82A11696672400302317 /* RSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSViewController.m; sourceTree = "<group>"; };
 		49DD82B01696688400302317 /* RSProgressCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSProgressCircle.h; sourceTree = "<group>"; };
@@ -74,7 +72,6 @@
 			isa = PBXGroup;
 			children = (
 				49DD829A1696672400302317 /* MainStoryboard_iPhone.storyboard */,
-				49DD829D1696672400302317 /* MainStoryboard_iPad.storyboard */,
 				49485C2A16A26BC800494699 /* RSBidController.h */,
 				49485C2B16A26BC800494699 /* RSBidController.m */,
 				49DD82B01696688400302317 /* RSProgressCircle.h */,
@@ -208,7 +205,6 @@
 				49DD82971696672400302317 /* Default@2x.png in Resources */,
 				49DD82991696672400302317 /* Default-568h@2x.png in Resources */,
 				49DD829C1696672400302317 /* MainStoryboard_iPhone.storyboard in Resources */,
-				49DD829F1696672400302317 /* MainStoryboard_iPad.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,14 +243,6 @@
 				49DD829B1696672400302317 /* en */,
 			);
 			name = MainStoryboard_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		49DD829D1696672400302317 /* MainStoryboard_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				49DD829E1696672400302317 /* en */,
-			);
-			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -319,6 +307,7 @@
 				GCC_PREFIX_HEADER = "RookScore/RookScore-Prefix.pch";
 				INFOPLIST_FILE = "RookScore/RookScore-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -330,6 +319,7 @@
 				GCC_PREFIX_HEADER = "RookScore/RookScore-Prefix.pch";
 				INFOPLIST_FILE = "RookScore/RookScore-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

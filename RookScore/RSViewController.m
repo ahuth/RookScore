@@ -104,7 +104,6 @@ typedef enum {
 - (IBAction)newButtonPressed:(id)sender {
     
     // After the alert, control is redirected to the processNewGame method.
-    
     [self showBinaryAlert:nil title:@"Start a new game?" type:startNew];
 }
 
