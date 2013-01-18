@@ -15,7 +15,7 @@
 
 @interface RSRenegController : UIViewController
 
-@property (assign) id<RenegDelegate> delegate;
+@property (weak) id<RenegDelegate> delegate;
 @property (strong, nonatomic) IBOutlet UILabel *pointsLabel;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *teamButtons;
 

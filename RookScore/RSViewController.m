@@ -92,7 +92,7 @@ typedef enum {
     
     UIBarButtonItem *button = (UIBarButtonItem *)sender;
     
-    if ([button.title isEqualToString:@"Bid"]) {
+    if (button.tag == start || button.tag == bidding) {
         // Bidding phase.
         [self performSegueWithIdentifier:@"mainToBid" sender:self];
     } else {
@@ -190,17 +190,20 @@ typedef enum {
     
     switch ([gameData[@"phase"] intValue]) {
         case start:
-            _bidButton.title = @"Bid";
+            _bidButton.title = NSLocalizedString(@"BID", nil);
+            _bidButton.tag = start;
             break;
         case bidding:
-            _bidButton.title = @"Bid";
+            _bidButton.title = NSLocalizedString(@"BID", nil);
+            _bidButton.tag = bidding;
             break;
         case scoring:
-            _bidButton.title = @"Score";
+            _bidButton.title = NSLocalizedString(@"SCORE", nil);
+            _bidButton.tag = scoring;
             break;
         case won:
-            [self showInfoAlert:nil title:@"Game Over"];
-            _bidButton.title = @"Game over";
+            [self showInfoAlert:nil title:NSLocalizedString(@"GAMEOVER", nil)];
+            _bidButton.title = NSLocalizedString(@"GAMEOVER", nil);;
             _bidButton.enabled = false;
             _renegButton.enabled = false;
             break;

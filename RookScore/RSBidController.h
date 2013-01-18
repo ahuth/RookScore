@@ -15,7 +15,7 @@
 
 @interface RSBidController : UIViewController
 
-@property (assign) id <BidDelegate> delegate;
+@property (weak) id <BidDelegate> delegate;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *teamButtons;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *bidButtons;
 

@@ -15,7 +15,7 @@
 
 @interface RSScoreController : UIViewController
 
-@property (assign) id <ScoreDelegate> delegate;
+@property (weak) id <ScoreDelegate> delegate;
 
 - (IBAction)cancelButtonPressed;
 - (IBAction)scoreButtonPressed:(UIButton *)sender;
