@@ -12,7 +12,9 @@
 
 @property (assign) NSInteger score;
 @property (assign) CGFloat progress;
+@property (assign) NSInteger team;
 
+- (void)initWithTeam:(NSInteger)teamNum;
 - (void)updateProgress:(CGFloat)percent score:(NSInteger)total;
 
 @end

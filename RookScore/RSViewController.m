@@ -31,6 +31,8 @@ typedef enum {
 	// Do any additional setup after loading the view, typically from a nib.
     
     self.game = [[RSRook alloc] init];
+    [self.teamOneCircle initWithTeam:1];
+    [self.teamTwoCircle initWithTeam:2];
 }
 
 - (void)didReceiveMemoryWarning
