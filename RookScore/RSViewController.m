@@ -192,20 +192,20 @@ typedef enum {
     
     switch ([gameData[@"phase"] intValue]) {
         case start:
-            _bidButton.title = NSLocalizedString(@"BID", nil);
+            _bidButton.title = @"Bid";
             _bidButton.tag = start;
             break;
         case bidding:
-            _bidButton.title = NSLocalizedString(@"BID", nil);
+            _bidButton.title = @"Bid";
             _bidButton.tag = bidding;
             break;
         case scoring:
-            _bidButton.title = NSLocalizedString(@"SCORE", nil);
+            _bidButton.title = @"Score";
             _bidButton.tag = scoring;
             break;
         case won:
-            [self showInfoAlert:nil title:NSLocalizedString(@"GAMEOVER", nil)];
-            _bidButton.title = NSLocalizedString(@"GAMEOVER", nil);;
+            [self showInfoAlert:nil title:@"Game Over"];
+            _bidButton.title = @"Game Over";
             _bidButton.enabled = false;
             _renegButton.enabled = false;
             break;

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		492A0CFE16A8E35400357DA0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 492A0CFD16A8E35400357DA0 /* Localizable.strings */; };
 		49485C2C16A26BC800494699 /* RSBidController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49485C2B16A26BC800494699 /* RSBidController.m */; };
 		49485C2F16A331E600494699 /* RSScoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49485C2E16A331E600494699 /* RSScoreController.m */; };
 		49A860891699314B00028620 /* RSRook.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A860881699314B00028620 /* RSRook.m */; };
@@ -27,7 +26,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		492A0CFD16A8E35400357DA0 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		49485C2A16A26BC800494699 /* RSBidController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSBidController.h; sourceTree = "<group>"; };
 		49485C2B16A26BC800494699 /* RSBidController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSBidController.m; sourceTree = "<group>"; };
 		49485C2D16A331E600494699 /* RSScoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSScoreController.h; sourceTree = "<group>"; };
@@ -141,7 +139,6 @@
 			children = (
 				49DD828A1696672400302317 /* RookScore-Info.plist */,
 				49DD828B1696672400302317 /* InfoPlist.strings */,
-				492A0CFD16A8E35400357DA0 /* Localizable.strings */,
 				49DD828E1696672400302317 /* main.m */,
 				49DD82901696672400302317 /* RookScore-Prefix.pch */,
 				49DD82941696672400302317 /* Default.png */,
@@ -208,7 +205,6 @@
 				49DD82971696672400302317 /* Default@2x.png in Resources */,
 				49DD82991696672400302317 /* Default-568h@2x.png in Resources */,
 				49DD829C1696672400302317 /* MainStoryboard_iPhone.storyboard in Resources */,
-				492A0CFE16A8E35400357DA0 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
