@@ -55,7 +55,7 @@
     
     NSInteger sliderValue = [self roundNumber:sender.value toNearest:5];
     otherTeamPoints = sliderValue;
-    _pointsLabel.text = [NSString stringWithFormat:@"%d", sliderValue];
+    _pointsLabel.text = [NSString stringWithFormat:@"and the other team scored %d points", sliderValue];
 }
 
 - (IBAction)teamButtonPressed:(UIButton *)sender {
