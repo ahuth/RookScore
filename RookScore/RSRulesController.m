@@ -41,7 +41,9 @@
 }
 
 - (IBAction)doneButtonPressed:(id)sender {
-    //[self.delegate didClickCancel];
+    // Haven't found a way to dismiss this with a delegate, yet.  Delegates are
+    // ugly, but the traditional way to dismiss a modal view is for the base
+    // view controller to do it.
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 @end

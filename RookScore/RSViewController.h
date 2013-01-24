@@ -14,7 +14,7 @@
 #import "RSRenegController.h"
 #import "RSRulesController.h"
 
-@interface RSViewController : UIViewController <BidDelegate, ScoreDelegate, RenegDelegate, RulesDelegate, UIAlertViewDelegate>
+@interface RSViewController : UIViewController <BidDelegate, ScoreDelegate, RenegDelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) RSRook *game;
 @property (strong, nonatomic) IBOutlet RSProgressCircle *teamOneCircle;

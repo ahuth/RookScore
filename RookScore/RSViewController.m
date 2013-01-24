@@ -46,7 +46,9 @@ typedef enum {
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    // Setup delegates for the views
+    // Setup delegates for the modal views.  Even though we get to our rules
+    // navigation controller with a segue, we don't use any delegates with it,
+    // which is why it's not represented here.
     if ([segue.identifier isEqualToString:@"mainToBid"]) {
         RSBidController *bidView = (RSBidController *)segue.destinationViewController;
         bidView.delegate = self;
@@ -56,9 +58,6 @@ typedef enum {
     } else if ([segue.identifier isEqualToString:@"mainToReneg"]) {
         RSRenegController *renegView = (RSRenegController *)segue.destinationViewController;
         renegView.delegate = self;
-    } else if ([segue.identifier isEqualToString:@"mainToRules"]) {
-        RSRulesController *rulesView = (RSRulesController *)segue.destinationViewController;
-        rulesView.delegate = self;
     }
 }
 

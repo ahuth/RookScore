@@ -8,13 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol RulesDelegate <NSObject>
-- (void)didClickCancel;
-@end
-
 @interface RSRulesController : UITableViewController
-
-@property (weak) id<RulesDelegate> delegate;
 
 - (IBAction)doneButtonPressed:(id)sender;
 
