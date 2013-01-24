@@ -10,6 +10,7 @@
 		49485C2C16A26BC800494699 /* RSBidController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49485C2B16A26BC800494699 /* RSBidController.m */; };
 		49485C2F16A331E600494699 /* RSScoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49485C2E16A331E600494699 /* RSScoreController.m */; };
 		49A860891699314B00028620 /* RSRook.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A860881699314B00028620 /* RSRook.m */; };
+		49D780CD16B0CE9900806166 /* RSRulesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D780CC16B0CE9900806166 /* RSRulesController.m */; };
 		49DD82831696672400302317 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DD82821696672400302317 /* UIKit.framework */; };
 		49DD82851696672400302317 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DD82841696672400302317 /* Foundation.framework */; };
 		49DD82871696672400302317 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DD82861696672400302317 /* CoreGraphics.framework */; };
@@ -32,6 +33,8 @@
 		49485C2E16A331E600494699 /* RSScoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSScoreController.m; sourceTree = "<group>"; };
 		49A860871699314B00028620 /* RSRook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSRook.h; sourceTree = "<group>"; };
 		49A860881699314B00028620 /* RSRook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSRook.m; sourceTree = "<group>"; };
+		49D780CB16B0CE9900806166 /* RSRulesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSRulesController.h; sourceTree = "<group>"; };
+		49D780CC16B0CE9900806166 /* RSRulesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSRulesController.m; sourceTree = "<group>"; };
 		49DD827E1696672400302317 /* RookScore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RookScore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DD82821696672400302317 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		49DD82841696672400302317 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -78,6 +81,8 @@
 				49DD82B11696688400302317 /* RSProgressCircle.m */,
 				49E7A8B216A4CF2B007A625D /* RSRenegController.h */,
 				49E7A8B316A4CF2B007A625D /* RSRenegController.m */,
+				49D780CB16B0CE9900806166 /* RSRulesController.h */,
+				49D780CC16B0CE9900806166 /* RSRulesController.m */,
 				49485C2D16A331E600494699 /* RSScoreController.h */,
 				49485C2E16A331E600494699 /* RSScoreController.m */,
 				49DD82A01696672400302317 /* RSViewController.h */,
@@ -223,6 +228,7 @@
 				49485C2C16A26BC800494699 /* RSBidController.m in Sources */,
 				49485C2F16A331E600494699 /* RSScoreController.m in Sources */,
 				49E7A8B416A4CF2B007A625D /* RSRenegController.m in Sources */,
+				49D780CD16B0CE9900806166 /* RSRulesController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

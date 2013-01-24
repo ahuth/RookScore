@@ -56,6 +56,9 @@ typedef enum {
     } else if ([segue.identifier isEqualToString:@"mainToReneg"]) {
         RSRenegController *renegView = (RSRenegController *)segue.destinationViewController;
         renegView.delegate = self;
+    } else if ([segue.identifier isEqualToString:@"mainToRules"]) {
+        RSRulesController *rulesView = (RSRulesController *)segue.destinationViewController;
+        rulesView.delegate = self;
     }
 }
 
@@ -123,6 +126,11 @@ typedef enum {
     if ([_bidButton.title isEqualToString:@"Score"]) {
         [self performSegueWithIdentifier:@"mainToReneg" sender:self];
     }
+}
+
+- (IBAction)rulesButtonPressed:(id)sender {
+    
+    [self performSegueWithIdentifier:@"mainToRules" sender:self];
 }
 
 - (void)processNewGame {
