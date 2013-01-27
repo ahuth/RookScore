@@ -790,9 +790,11 @@
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <mutableString key="text">After the deal, players bid in increments of 5 points for the privilege of using the cards in the nest and naming the trump suit.
 
-Bidding starts with the player to the left of the dealer and passes clockwise. The minimum bid is 70 points, and the maximum is 120 points. If a player chooses not to increase the bid, he or she may pass to the next player. A player that has passed may not bid for the remainder of the round. 
+Bidding starts with the player to the left of the dealer and passes clockwise. The minimum bid is 70 points, and the maximum is 120 points.
 
-A player may also check, however, there may not be a check pass check pattern. Also if both players of one team pass, while one player from the other team is in check with the player from the same team with the highest bid, that player must then take the next highest bid or pass.
+If a player chooses not to increase the bid, he or she may pass to the next player. A player that has passed may not bid for the remainder of the round. 
+
+A player may also check. However, there may not be a check pass check pattern.
 
 Once all players but one have passed, the high bidder adds the five cards in the nest to his or her hand, and then puts any five cards back into the nest. He or she then names the trump suit.</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -820,9 +822,13 @@ Once all players but one have passed, the high bidder adds the five cards in the
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <mutableString key="text">After the trump suit has been named, the player to the left of the dealer leads with any card, placing it face-up on the center of the table. Play proceeds clockwise, with each player playing one card face-up in turn. A player must either follow suit or play the Rook Bird card. If a player has no cards of the leading suit, he or she may play any other card.
+                                <mutableString key="text">After the trump suit has been named, the player to the left of the dealer leads with any card, placing it face-up on the center of the table.
 
-After each player has played, the player who played the highest trump card, or, if no trump card was played, the highest card of the leading suit takes all four cards, or takes the trick, and places it face-down in front of him or her.  The person who takes the trick leads in the next trick.
+Play proceeds clockwise, with each player playing one card face-up in turn. 
+
+A player must either follow suit or play the Rook Bird card. If a player has no cards of the leading suit, he or she may play any other card.
+
+After each player has played, the player who played the highest trump card, or (if no trump card was played) the highest card of the leading suit takes all four cards and places it face-down in front of him or her.  This player then leads in the next trick.
 
 The player that takes the last trick in a round captures the nest and scores any counters in it.</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -970,14 +976,16 @@ The remaining cards are dealt normally to the four players, giving each a hand o
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <mutableString key="text">Rook is a trick-taking game, usually played with a specialized deck of cards. Sometimes referred to as "Christian cards" or "missionary poker", Rook playing cards were introduced in 1906 to provide an alternative to standard playing cards for those who considered the face cards in a regular deck inappropriate because of their association with gambling and cartomancy.
+                                <string key="text">Rook is a trick-taking game, usually played with a specialized deck of cards.
+
+Sometimes referred to as "Christian cards" or "missionary poker", Rook playing cards were introduced in 1906 to provide an alternative to standard playing cards for those who considered the face cards in a regular deck inappropriate because of their association with gambling and cartomancy.
 
 Players are organized into two teams of two players each, sitting opposite each other. Players must keep their hands secret from all other players, including their teammate.
 
 The object of the game is to be the first team to reach 300 points by capturing tricks that contain cards with point values.
 
-If both teams have over 300 points at the end of a round, the team with the higher point total wins.</mutableString>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+If both teams have over 300 points at the end of a round, the team with the higher point total wins.</string>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
