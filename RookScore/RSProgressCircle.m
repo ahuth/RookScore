@@ -12,6 +12,7 @@
 
 - (CGFloat)degreesToRadians:(NSInteger)degrees;
 - (void)drawCenteredText:(NSString*)text atPoint:(CGPoint)point withFont:(UIFont*)textFont inRect:(CGRect)aRect;
+- (void)drawCircleAtPoint:(CGPoint)point fromRadians:(CGFloat)start toRadians:(CGFloat)end withRadius:(CGFloat)radius withWidth:(NSInteger)width clockwise:(BOOL)clockwise;
 - (CGPoint)getPointFromCenter:(CGPoint)center atDegrees:(NSInteger)degrees fromRadius:(CGFloat)radius;
 
 @end
@@ -37,71 +38,92 @@ const NSInteger CIRCLE_STROKE_WIDTH = 20;
 {
     // Drawing code
     
-    NSInteger direction;
-    CGContextRef context = UIGraphicsGetCurrentContext();
     NSString *scoreString = [NSString stringWithFormat:@"%d", _score];
     NSString *teamString = [NSString stringWithFormat:@"Team %d", _team];
     
     // Circle dimensions
-    CGRect allRect = self.bounds;
-    CGPoint center = CGPointMake(allRect.size.width / 2, allRect.size.height / 2);
-    CGFloat radius = (allRect.size.width - CIRCLE_STROKE_WIDTH) / 2;
+    CGPoint center = CGPointMake(self.bounds.size.width / 2, self.bounds.size.height / 2);
+    CGFloat radius = (self.bounds.size.width - CIRCLE_STROKE_WIDTH) / 2;
     
     // The start and end angle to draw between.  Notice that we start at -90
     // degrees, which is straight up.
     NSInteger startAngle = -90;
     NSInteger endAngle = startAngle + _progress * 360.0;
     
-    // If progress positive, we want a clockwise circle.  If it's negative, we
-    // want a counter-clockwise circle.
-    if (_progress >= 0) {
-        direction = 0;  // clockwise
-        CGContextSetStrokeColorWithColor(context, [UIColor redColor].CGColor);
-    } else {
-        direction = 1;  // anti-clockwise
-        CGContextSetStrokeColorWithColor(context, [UIColor blueColor].CGColor);
-    }
-    
-    // Draw the circle.
-    CGContextSetLineWidth(context, CIRCLE_STROKE_WIDTH);
-    CGContextAddArc(context, center.x, center.y, radius, [self degreesToRadians:startAngle], [self degreesToRadians:endAngle], direction);
-    CGContextStrokePath(context);
-    
-    // Draw text to identify the team and the score.  Where we draw these depends
-    // on if the game is starting, in progress, or over.
     if (_progress == 0) {
         
         // Game is just starting, so only draw the team label.
+        
         [self drawCenteredText:teamString
                        atPoint:center
                       withFont:[UIFont boldSystemFontOfSize:20.0]
-                        inRect:allRect];
-        
+                        inRect:self.bounds];
+
     } else if (_progress < 1) {
         
-        // Offset the text we'll draw by 10 degrees from the edge of our partial
-        // circle, so that we're not drawing text over the circle.
+        // We're in the middle of a game, so draw the circle, the team label, and
+        // the score.
+        
+        const NSInteger offsetAngle = 10;
+        BOOL drawClockwise = (_progress < 0) ? NO : YES;
+        
+        [self drawCircleAtPoint:center
+                    fromRadians:[self degreesToRadians:startAngle]
+                      toRadians:[self degreesToRadians:endAngle]
+                     withRadius:radius
+                      withWidth:CIRCLE_STROKE_WIDTH
+                      clockwise:drawClockwise];
+        
         CGPoint textPoint = [self getPointFromCenter:center
-                                           atDegrees:(endAngle + 10)
+                                           atDegrees:(endAngle + offsetAngle)
                                           fromRadius:radius];
         
         [self drawCenteredText:teamString
                        atPoint:center
                       withFont:[UIFont boldSystemFontOfSize:20.0]
-                        inRect:allRect];
+                        inRect:self.bounds];
         
         [self drawCenteredText:scoreString
                        atPoint:textPoint
                       withFont:[UIFont boldSystemFontOfSize:20.0]
-                        inRect:allRect];
+                        inRect:self.bounds];
         
     } else {
         
-        // Game is over, so just draw the score.
+        // Game is over, so don't draw the team label.
+        
+        [self drawCircleAtPoint:center
+                    fromRadians:[self degreesToRadians:startAngle]
+                      toRadians:[self degreesToRadians:(startAngle + 360)]
+                     withRadius:radius
+                      withWidth:CIRCLE_STROKE_WIDTH
+                      clockwise:YES];
+        
         [self drawCenteredText:scoreString
                        atPoint:center
                       withFont:[UIFont boldSystemFontOfSize:20.0]
-                        inRect:allRect];
+                        inRect:self.bounds];
+    }
+}
+
+- (void)drawCircleAtPoint:(CGPoint)point fromRadians:(CGFloat)start toRadians:(CGFloat)end withRadius:(CGFloat)radius withWidth:(NSInteger)width clockwise:(BOOL)clockwise {
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    if (clockwise) {
+        
+        CGContextSetStrokeColorWithColor(context, [UIColor redColor].CGColor);
+        CGContextSetLineWidth(context, width);
+        CGContextAddArc(context, point.x, point.y, radius, start, end, 0);
+        CGContextStrokePath(context);
+        
+    } else {
+        
+        CGContextSetStrokeColorWithColor(context, [UIColor blueColor].CGColor);
+        CGContextSetLineWidth(context, width);
+        CGContextAddArc(context, point.x, point.y, radius, end, start, 0);
+        CGContextStrokePath(context);
+        
     }
 }
 
@@ -141,7 +163,7 @@ const NSInteger CIRCLE_STROKE_WIDTH = 20;
     
     // Get the coordinates of a point on a circle.
     
-    degrees = (_score < 0) ? -degrees : degrees;
+    //degrees = (_score < 0) ? -degrees : degrees;
 
     CGFloat x = center.x + radius * cos([self degreesToRadians:degrees]);
     CGFloat y = center.y + radius * sin([self degreesToRadians:degrees]);
