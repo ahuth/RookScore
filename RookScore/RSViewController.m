@@ -189,10 +189,10 @@ typedef enum {
 
 - (void)renderGameState:(NSDictionary *)gameData {
     
-    NSInteger teamOneScore = [gameData[@"teamOneScore"] intValue];
-    NSInteger teamTwoScore = [gameData[@"teamTwoScore"] intValue];
-    CGFloat teamOneProgress = [gameData[@"teamOneProgress"] floatValue];
-    CGFloat teamTwoProgress = [gameData[@"teamTwoProgress"] floatValue];
+    const NSInteger teamOneScore = [gameData[@"teamOneScore"] intValue];
+    const NSInteger teamTwoScore = [gameData[@"teamTwoScore"] intValue];
+    const CGFloat teamOneProgress = [gameData[@"teamOneProgress"] floatValue];
+    const CGFloat teamTwoProgress = [gameData[@"teamTwoProgress"] floatValue];
     
     [self.teamOneCircle updateProgress:teamOneProgress score:teamOneScore];
     [self.teamTwoCircle updateProgress:teamTwoProgress score:teamTwoScore];

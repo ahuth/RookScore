@@ -42,13 +42,13 @@ const NSInteger CIRCLE_STROKE_WIDTH = 20;
     NSString *teamString = [NSString stringWithFormat:@"Team %d", _team];
     
     // Circle dimensions
-    CGPoint center = CGPointMake(self.bounds.size.width / 2, self.bounds.size.height / 2);
-    CGFloat radius = (self.bounds.size.width - CIRCLE_STROKE_WIDTH) / 2;
+    const CGPoint center = CGPointMake(self.bounds.size.width / 2, self.bounds.size.height / 2);
+    const CGFloat radius = (self.bounds.size.width - CIRCLE_STROKE_WIDTH) / 2;
     
     // The start and end angle to draw between.  Notice that we start at -90
     // degrees, which is straight up.
     const NSInteger startAngle = -90;
-    NSInteger endAngle = startAngle + _progress * 360.0;
+    const NSInteger endAngle = startAngle + _progress * 360.0;
     
     if (_progress == 0) {
         
@@ -127,7 +127,7 @@ const NSInteger CIRCLE_STROKE_WIDTH = 20;
 
 - (void)drawCenteredText:(NSString*)text atPoint:(CGPoint)point withFont:(UIFont*)textFont inRect:(CGRect)aRect {
     
-    CGSize textSize = [text sizeWithFont:textFont];
+    const CGSize textSize = [text sizeWithFont:textFont];
     
     // Set where we draw the text so that it's centered on the point parameter.
     CGPoint textPoint = CGPointMake(point.x - textSize.width / 2, point.y - textSize.height / 2);
@@ -161,8 +161,8 @@ const NSInteger CIRCLE_STROKE_WIDTH = 20;
     
     // Get the coordinates of a point on a circle.
 
-    CGFloat x = center.x + radius * cos([self degreesToRadians:degrees]);
-    CGFloat y = center.y + radius * sin([self degreesToRadians:degrees]);
+    const CGFloat x = center.x + radius * cos([self degreesToRadians:degrees]);
+    const CGFloat y = center.y + radius * sin([self degreesToRadians:degrees]);
     
     return CGPointMake(x, y);
 }
