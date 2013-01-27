@@ -18,6 +18,7 @@
 @property (weak) id <BidDelegate> delegate;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *teamButtons;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *bidButtons;
+@property (strong, nonatomic) IBOutlet UILabel *biddingLabel;
 
 - (IBAction)cancelButtonPressed;
 - (IBAction)teamButtonPressed:(UIButton *)sender;

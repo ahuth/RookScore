@@ -69,9 +69,9 @@ const NSInteger POINTS_PER_ROUND = 120;
         
         [self archiveGameState];
         
-        NSInteger bid = [gameState[@"currentBid"] intValue];
-        NSInteger teamOneScore = [gameState[@"teamOneScore"] intValue];
-        NSInteger teamTwoScore = [gameState[@"teamTwoScore"] intValue];
+        const NSInteger bid = [gameState[@"currentBid"] intValue];
+        const NSInteger teamOneScore = [gameState[@"teamOneScore"] intValue];
+        const NSInteger teamTwoScore = [gameState[@"teamTwoScore"] intValue];
     
         switch (cheater) {
             case 1:
@@ -103,10 +103,10 @@ const NSInteger POINTS_PER_ROUND = 120;
     
     [self archiveGameState];
     
-    NSInteger bid = [gameState[@"currentBid"] intValue];
-    NSInteger bidder = [gameState[@"currentBidder"] intValue];
-    NSInteger teamOneScore = [gameState[@"teamOneScore"] intValue];
-    NSInteger teamTwoScore = [gameState[@"teamTwoScore"] intValue];
+    const NSInteger bid = [gameState[@"currentBid"] intValue];
+    const NSInteger bidder = [gameState[@"currentBidder"] intValue];
+    const NSInteger teamOneScore = [gameState[@"teamOneScore"] intValue];
+    const NSInteger teamTwoScore = [gameState[@"teamTwoScore"] intValue];
     
     if (score < bid) {
         // The bidder did NOT meet the bid.
@@ -200,8 +200,8 @@ const NSInteger POINTS_PER_ROUND = 120;
 
 - (BOOL)gameIsOver {
     
-    NSInteger teamOneScore = [gameState[@"teamOneScore"] intValue];
-    NSInteger teamTwoScore = [gameState[@"teamTwoScore"] intValue];
+    const NSInteger teamOneScore = [gameState[@"teamOneScore"] intValue];
+    const NSInteger teamTwoScore = [gameState[@"teamTwoScore"] intValue];
     
     if (teamOneScore >= MAX_ROOK_SCORE || teamTwoScore >= MAX_ROOK_SCORE) {
         return YES;

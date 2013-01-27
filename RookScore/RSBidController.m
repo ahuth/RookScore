@@ -54,6 +54,10 @@
 
 - (IBAction)teamButtonPressed:(UIButton *)sender {
     
+    if (team != 0) {
+        return;
+    }
+    
     team = sender.tag;
     
     // Hide the other team.
@@ -63,12 +67,20 @@
         }
     }
     
+    // Change the label.
+    _biddingLabel.text = [NSString stringWithFormat:@"Team %d %@", team, _biddingLabel.text];
+    
+    // If a team and bid have been selected, we're done with this view.
     if (team && bid) {
         [self.delegate didPickBid:team amount:bid];
     }
 }
 
 - (IBAction)bidButtonPressed:(UIButton *)sender {
+    
+    if (bid != 0) {
+        return;
+    }
     
     bid = sender.tag;
     
@@ -79,6 +91,10 @@
         }
     }
     
+    // Change the label.
+    _biddingLabel.text = [NSString stringWithFormat:@"%@ %d", _biddingLabel.text, bid];
+    
+    // If a team and bid have been selected, we're done with this view.
     if (team && bid) {
         [self.delegate didPickBid:team amount:bid];
     }

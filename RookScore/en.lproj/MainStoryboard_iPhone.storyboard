@@ -391,6 +391,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="biddingLabel" destination="Nan-SF-BdF" id="OpV-Ll-U0X"/>
                         <outletCollection property="teamButtons" destination="8ms-6s-pua" id="boc-b1-PQi"/>
                         <outletCollection property="teamButtons" destination="FzQ-xi-xMa" id="AgQ-mZ-8kq"/>
                         <outletCollection property="bidButtons" destination="Ue5-qF-Vcr" id="dip-uW-JaY"/>
@@ -586,7 +587,7 @@
                                     <action selector="scoreButtonPressed:" destination="IGS-ND-nyI" eventType="touchUpInside" id="A96-Kw-qD2"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Bidding team scored" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DgQ-HI-SPY">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Bidding team scored..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DgQ-HI-SPY">
                                 <rect key="frame" x="20" y="108" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1022,6 +1023,7 @@ If both teams have over 300 points at the end of a round, the team with the high
                 <relationship kind="action" name="bidButtonPressed:" candidateClass="UIButton"/>
                 <relationship kind="action" name="cancelButtonPressed"/>
                 <relationship kind="action" name="teamButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="biddingLabel" candidateClass="UILabel"/>
                 <relationship kind="outletCollection" name="bidButtons" candidateClass="UIButton"/>
                 <relationship kind="outletCollection" name="teamButtons" candidateClass="UIButton"/>
             </relationships>
