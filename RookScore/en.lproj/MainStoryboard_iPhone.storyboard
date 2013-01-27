@@ -611,7 +611,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection id="TLC-6G-cXv">
+                            <tableViewSection footerTitle="Source: wikipedia.org" id="TLC-6G-cXv">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="gtx-r0-XUr" style="IBUITableViewCellStyleDefault" id="V7C-VJ-kvI">
                                         <rect key="frame" x="0.0" y="10" width="320" height="45"/>
@@ -719,7 +719,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="jsV-1N-BEp" style="IBUITableViewCellStyleDefault" id="6vL-xd-iac">
-                                        <rect key="frame" x="0.0" y="231" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="231" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="280" height="43"/>
@@ -737,6 +737,27 @@
                                         </view>
                                         <connections>
                                             <segue destination="Rys-ZJ-Rhv" kind="push" id="IOw-3z-Bqw"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="07t-Sw-ANs" style="IBUITableViewCellStyleDefault" id="ulG-2K-RN0">
+                                        <rect key="frame" x="0.0" y="275" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Reneg" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="07t-Sw-ANs">
+                                                    <rect key="frame" x="10" y="0.0" width="260" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="vjE-BF-Ybc" kind="push" id="1WY-0b-YPt"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -762,6 +783,22 @@
                     <view key="view" contentMode="scaleToFill" id="sgB-gn-J2C">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" id="Z5h-2h-CVc">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <mutableString key="text">After the deal, players bid in increments of 5 points for the privilege of using the cards in the nest and naming the trump suit.
+
+Bidding starts with the player to the left of the dealer and passes clockwise. The minimum bid is 70 points, and the maximum is 120 points. If a player chooses not to increase the bid, he or she may pass to the next player. A player that has passed may not bid for the remainder of the round. 
+
+A player may also check, however, there may not be a check pass check pattern. Also if both players of one team pass, while one player from the other team is in check with the player from the same team with the highest bid, that player must then take the next highest bid or pass.
+
+Once all players but one have passed, the high bidder adds the five cards in the nest to his or her hand, and then puts any five cards back into the nest. He or she then names the trump suit.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Bidding" id="Gkg-k4-ynt"/>
@@ -778,6 +815,20 @@
                     <view key="view" contentMode="scaleToFill" id="7WL-TJ-Wdh">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" id="2uf-kS-N1C">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <mutableString key="text">After the trump suit has been named, the player to the left of the dealer leads with any card, placing it face-up on the center of the table. Play proceeds clockwise, with each player playing one card face-up in turn. A player must either follow suit or play the Rook Bird card. If a player has no cards of the leading suit, he or she may play any other card.
+
+After each player has played, the player who played the highest trump card, or, if no trump card was played, the highest card of the leading suit takes all four cards, or takes the trick, and places it face-down in front of him or her.  The person who takes the trick leads in the next trick.
+
+The player that takes the last trick in a round captures the nest and scores any counters in it.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Play" id="a3X-jv-glh"/>
@@ -787,6 +838,34 @@
             </objects>
             <point key="canvasLocation" x="1777" y="1248"/>
         </scene>
+        <!--View Controller - Reneg-->
+        <scene sceneID="rIv-5p-uYF">
+            <objects>
+                <viewController id="vjE-BF-Ybc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3Md-rT-SBl">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" id="XiD-Em-tcx">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">If a player reneges, or fails to follow suit when he or she could have, the error may be corrected before the next trick is taken.
+
+If it is not discovered until later, the round ends, and the team that made the error loses a number of points equal to the bid, regardless of which team made the bid. The opposing team scores all the counters they captured before the error was discovered.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Reneg" id="OeI-vZ-c3c"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CRw-Hv-4UI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="444" y="1248"/>
+        </scene>
         <!--View Controller - Scoring-->
         <scene sceneID="yqH-6T-hqT">
             <objects>
@@ -794,6 +873,22 @@
                     <view key="view" contentMode="scaleToFill" id="Z1C-bH-Da7">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" id="zPJ-y3-76e">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">When all possible tricks have been taken, each team adds the values of the counters it captured. 
+
+If the bidding team failed to make the number of points bid, that team loses a number of points equal to the amount of the bid, and does not make any points for counters captured in the round.
+
+The opposing team receives points equal to the value of any counters they captured.
+
+The first team to reach 300 points is the winner.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Scoring" id="gUc-3T-4yF"/>
@@ -810,6 +905,20 @@
                     <view key="view" contentMode="scaleToFill" id="J22-W9-zAd">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" id="2xf-iM-hck">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">The Rook Bird card is the highest trump card in the game. As such, it takes any trick in which it is played.
+
+Leading it is treated the same as leading a card of the trump suit. If trump suit is led and the player holding it has no other trump, he or she must follow suit by playing the Rook Bird card.
+
+However, the Rook Bird card may be played at any time, even if the player holding it is able to follow suit. It is the only card that may be played this way.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Rook Card" id="fce-RH-a13"/>
@@ -826,6 +935,20 @@
                     <view key="view" contentMode="scaleToFill" id="XtM-pB-jLd">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" id="fno-v1-9yW">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">The dealer shuffles and cuts the deck, then deals all of the cards, one at a time. 
+
+After every player has received his or her first card, the dealer places one card in the center of the table. This is repeated until there are five cards—the nest of rook—in the middle of the table. 
+
+The remaining cards are dealt normally to the four players, giving each a hand of 10 cards.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Deal" id="ZTm-Zh-x0D"/>
@@ -842,6 +965,22 @@
                     <view key="view" contentMode="scaleToFill" id="QCV-gp-hUV">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" id="Pi4-Pk-z7v">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <mutableString key="text">Rook is a trick-taking game, usually played with a specialized deck of cards. Sometimes referred to as "Christian cards" or "missionary poker", Rook playing cards were introduced in 1906 to provide an alternative to standard playing cards for those who considered the face cards in a regular deck inappropriate because of their association with gambling and cartomancy.
+
+Players are organized into two teams of two players each, sitting opposite each other. Players must keep their hands secret from all other players, including their teammate.
+
+The object of the game is to be the first team to reach 300 points by capturing tricks that contain cards with point values.
+
+If both teams have over 300 points at the end of a round, the team with the higher point total wins.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="General" id="bug-OI-WED"/>
