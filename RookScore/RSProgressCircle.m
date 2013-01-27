@@ -12,7 +12,7 @@
 
 - (CGFloat)degreesToRadians:(NSInteger)degrees;
 - (void)drawCenteredText:(NSString*)text atPoint:(CGPoint)point withFont:(UIFont*)textFont inRect:(CGRect)aRect;
-- (void)drawCircleAtPoint:(CGPoint)point fromRadians:(CGFloat)start toRadians:(CGFloat)end withRadius:(CGFloat)radius withWidth:(NSInteger)width clockwise:(BOOL)clockwise;
+- (void)drawCircleAtPoint:(CGPoint)point fromRadians:(CGFloat)start toRadians:(CGFloat)end withRadius:(CGFloat)radius withWidth:(NSInteger)width withColor:(UIColor *)color clockwise:(BOOL)clockwise;
 - (CGPoint)getPointFromCenter:(CGPoint)center atDegrees:(NSInteger)degrees fromRadius:(CGFloat)radius;
 
 @end
@@ -47,7 +47,7 @@ const NSInteger CIRCLE_STROKE_WIDTH = 20;
     
     // The start and end angle to draw between.  Notice that we start at -90
     // degrees, which is straight up.
-    NSInteger startAngle = -90;
+    const NSInteger startAngle = -90;
     NSInteger endAngle = startAngle + _progress * 360.0;
     
     if (_progress == 0) {
@@ -64,14 +64,16 @@ const NSInteger CIRCLE_STROKE_WIDTH = 20;
         // We're in the middle of a game, so draw the circle, the team label, and
         // the score.
         
-        const NSInteger offsetAngle = 10;
-        BOOL drawClockwise = (_progress < 0) ? NO : YES;
+        const NSInteger offsetAngle = (_progress < 0) ? -10 : 10;
+        const BOOL drawClockwise = (_progress < 0) ? NO : YES;
+        UIColor *drawColor = (_progress < 0) ? [UIColor blueColor] : [UIColor redColor];
         
         [self drawCircleAtPoint:center
                     fromRadians:[self degreesToRadians:startAngle]
                       toRadians:[self degreesToRadians:endAngle]
                      withRadius:radius
                       withWidth:CIRCLE_STROKE_WIDTH
+                      withColor:drawColor
                       clockwise:drawClockwise];
         
         CGPoint textPoint = [self getPointFromCenter:center
@@ -97,6 +99,7 @@ const NSInteger CIRCLE_STROKE_WIDTH = 20;
                       toRadians:[self degreesToRadians:(startAngle + 360)]
                      withRadius:radius
                       withWidth:CIRCLE_STROKE_WIDTH
+                      withColor:[UIColor redColor]
                       clockwise:YES];
         
         [self drawCenteredText:scoreString
@@ -106,25 +109,20 @@ const NSInteger CIRCLE_STROKE_WIDTH = 20;
     }
 }
 
-- (void)drawCircleAtPoint:(CGPoint)point fromRadians:(CGFloat)start toRadians:(CGFloat)end withRadius:(CGFloat)radius withWidth:(NSInteger)width clockwise:(BOOL)clockwise {
+- (void)drawCircleAtPoint:(CGPoint)point fromRadians:(CGFloat)start toRadians:(CGFloat)end withRadius:(CGFloat)radius withWidth:(NSInteger)width withColor:(UIColor *)color clockwise:(BOOL)clockwise {
     
     CGContextRef context = UIGraphicsGetCurrentContext();
     
+    CGContextSetStrokeColorWithColor(context, color.CGColor);
+    CGContextSetLineWidth(context, width);
+    
     if (clockwise) {
-        
-        CGContextSetStrokeColorWithColor(context, [UIColor redColor].CGColor);
-        CGContextSetLineWidth(context, width);
         CGContextAddArc(context, point.x, point.y, radius, start, end, 0);
-        CGContextStrokePath(context);
-        
     } else {
-        
-        CGContextSetStrokeColorWithColor(context, [UIColor blueColor].CGColor);
-        CGContextSetLineWidth(context, width);
         CGContextAddArc(context, point.x, point.y, radius, end, start, 0);
-        CGContextStrokePath(context);
-        
     }
+    
+    CGContextStrokePath(context);
 }
 
 - (void)drawCenteredText:(NSString*)text atPoint:(CGPoint)point withFont:(UIFont*)textFont inRect:(CGRect)aRect {
@@ -162,8 +160,6 @@ const NSInteger CIRCLE_STROKE_WIDTH = 20;
 - (CGPoint)getPointFromCenter:(CGPoint)center atDegrees:(NSInteger)degrees fromRadius:(CGFloat)radius {
     
     // Get the coordinates of a point on a circle.
-    
-    //degrees = (_score < 0) ? -degrees : degrees;
 
     CGFloat x = center.x + radius * cos([self degreesToRadians:degrees]);
     CGFloat y = center.y + radius * sin([self degreesToRadians:degrees]);
@@ -181,10 +177,10 @@ const NSInteger CIRCLE_STROKE_WIDTH = 20;
 
 - (void)updateProgress:(CGFloat)nextProgress score:(NSInteger)nextScore {
     
-    // setNeedsDisplay causes our drawRect method above to be called.
-    
     _score = nextScore;
     _progress = nextProgress;
+    
+    // setNeedsDisplay causes our drawRect method above to be called.
     [self setNeedsDisplay];
 }
 
