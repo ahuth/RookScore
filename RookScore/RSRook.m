@@ -65,7 +65,7 @@ const NSInteger POINTS_PER_ROUND = 120;
 
 - (NSDictionary *)processReneg:(NSInteger)cheater otherTeamPoints:(NSInteger)points {
     
-    if (gameState[@"phase"] = @(scoring)) {
+    if ([gameState[@"phase"] isEqual: @(scoring)]) {
         
         [self archiveGameState];
         
@@ -161,7 +161,7 @@ const NSInteger POINTS_PER_ROUND = 120;
 
 - (NSDictionary *)startNewGame {
     
-    if (gameState[@"phase"] != @(start)) {
+    if (![gameState[@"phase"] isEqual: @(start)]) {
         
         [gameState removeAllObjects];
         [previousState removeAllObjects];
