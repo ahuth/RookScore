@@ -19,9 +19,6 @@
 
 @implementation RSProgressCircle
 
-// Constants
-const NSInteger CIRCLE_STROKE_WIDTH = 20;
-
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -42,8 +39,9 @@ const NSInteger CIRCLE_STROKE_WIDTH = 20;
     NSString *teamString = [NSString stringWithFormat:@"Team %d", _team];
     
     // Circle dimensions
+    const NSInteger strokeWidth = 20;
     const CGPoint center = CGPointMake(self.bounds.size.width / 2, self.bounds.size.height / 2);
-    const CGFloat radius = (self.bounds.size.width - CIRCLE_STROKE_WIDTH) / 2;
+    const CGFloat radius = (self.bounds.size.width - strokeWidth) / 2;
     
     // The start and end angle to draw between.  Notice that we start at -90
     // degrees, which is straight up.
@@ -72,18 +70,18 @@ const NSInteger CIRCLE_STROKE_WIDTH = 20;
                     fromRadians:[self degreesToRadians:startAngle]
                       toRadians:[self degreesToRadians:endAngle]
                      withRadius:radius
-                      withWidth:CIRCLE_STROKE_WIDTH
+                      withWidth:strokeWidth
                       withColor:drawColor
                       clockwise:drawClockwise];
-        
-        CGPoint textPoint = [self getPointFromCenter:center
-                                           atDegrees:(endAngle + offsetAngle)
-                                          fromRadius:radius];
         
         [self drawCenteredText:teamString
                        atPoint:center
                       withFont:[UIFont boldSystemFontOfSize:20.0]
                         inRect:self.bounds];
+        
+        CGPoint textPoint = [self getPointFromCenter:center
+                                           atDegrees:(endAngle + offsetAngle)
+                                          fromRadius:radius];
         
         [self drawCenteredText:scoreString
                        atPoint:textPoint
@@ -98,7 +96,7 @@ const NSInteger CIRCLE_STROKE_WIDTH = 20;
                     fromRadians:[self degreesToRadians:startAngle]
                       toRadians:[self degreesToRadians:(startAngle + 360)]
                      withRadius:radius
-                      withWidth:CIRCLE_STROKE_WIDTH
+                      withWidth:strokeWidth
                       withColor:[UIColor redColor]
                       clockwise:YES];
         
